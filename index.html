@@ -4,27 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+
     <!-- DaisyUI + Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts CDN -->
 
-    <!-- Fontawesome CDN-->
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ABEF5F', // Adding the primary color (className: text-primary)
+                        secondary: '#ABEF5F80', // Adding secondary color
+                        dark01: '#212121', // Adding dark-01 color (for heading)
+                        dark02: '#494949', // Adding dark-02 color (for after heading paragraph)
+                        dark03: '#737373', // Adding dark-03 color (for less important paragraph)
+                        dark04: '#1C1C1C',
+                        light01: '#E9E9E9',
+                    },
+                    fontFamily: {
+                        manrope: ['"Manrope"', 'sans-serif'],  // Adding Manrope font (className: font-manrope)
+                    },
+                    fontSize: {
+                        'h4': '1.75rem', // 28px
+                        'h3': '2rem',    // 32px
+                        'h2': '2.5rem', // 40px
+                        'h1': '4rem',   // 64px
+                    },
+                    width: {
+                        'container-mobile': '89.33%', // 89.33% for mobile
+                        'container-desktop': '81.25%', // 81.25% for desktop
+                    },
+                },
+            },
+        }
+    </script>
+
+
+    <!-- FontAwesome CDN-->
     <script src="https://kit.fontawesome.com/1c88b4b3e9.js" crossorigin="anonymous"></script>
 
 
-    <!-- For Easy Access -->
-    <!-- https://fonts.google.com/ -->
-    <!-- https://fontawesome.com/icons -->
-    <!-- https://heroicons.com/ -->
-
 </head>
-<body>
+<body class="font-manrope">
     <!-- Header -->
-    <header></header>
+    <header class="bg-gradient-to-t from-white to-white/0">
+        <!-- Nav -->
+        <nav class="w-container-mobile md:w-container-desktop mx-auto flex mt-6 items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div src="logo.png" alt="Logo" class="h-7 w-7 flex justify-center items-center bg-primary rounded-full">
+                    <i class="transform -rotate-45 fa-solid fa-arrow-right font-extrabold"></i>
+                </div>
+                <span class="ml-2 text-h4 font-extrabold lg:text-dark01">Rinterio</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-dark03 font-normal text-base transition-all duration-300 hover:text-dark02 hover:font-extrabold hover:text-black">Home</a>
+                <a href="#" class="text-dark03 font-normal text-base transition-all duration-300 hover:text-dark02 hover:font-extrabold hover:text-black">Services</a>
+                <a href="#" class="text-dark03 font-normal text-base transition-all duration-300 hover:text-dark02 hover:font-extrabold hover:text-black">Portfolio</a>
+                <a href="#" class="text-dark03 font-normal text-base transition-all duration-300 hover:text-dark02 hover:font-extrabold hover:text-black">Blogs</a>
+                <a href="#" class="text-dark03 font-normal text-base transition-all duration-300 hover:text-dark02 hover:font-extrabold hover:text-black">Contact Us</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button class="border-2 w-9 h-9 flex justify-center items-center rounded-full text-gray-700 hover:text-black">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="border-2 w-9 h-9 flex justify-center items-center rounded-full text-gray-700 hover:text-black">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <div class="btn px-4 py-2 bg-lime-300 text-black rounded-full hover:bg-lime-400 flex justify-center items-center gap-2">
+                    <a class="font-extrabold text-dark04 text-xl" href="#">Book Consult</a>
+                    <div src="logo.png" alt="Logo" class="h-6 w-6 flex justify-center items-center bg-dark04 text-white rounded-full">
+                        <i class="transform -rotate-45 fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <div class="p-2 text-gray-700">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Hero -->
+        <div class="w-container-mobile md:w-container-desktop mx-auto">
+            <img src="./assets/images/banner.png" alt="Barn house" class="mb-4 mx-auto">
+            <h1 class="text-h4 font-extrabold text-center text-dark01 mb-6 lg:text-h1">
+                A barn house of this design has a 
+                <br class="hidden md:block"> striking appearance
+            </h1>
+            <p class="text-sm text-center font-medium text-dark02 mb-8 lg:text-base">
+                The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal 
+                <br class="hidden md:block"> accents, and large windows that flood the space with natural light.
+            </p>
+            <div class="text-center">
+                <button class="btn bg-secondary text-black font-semibold w-full sm:w-auto py-2 px-6 rounded-full flex items-center justify-center gap-3 mx-auto hover:bg-primary">
+                    <span class="font-bold text-xl">View Details</span>
+                    <div src="logo.png" alt="Logo" class="h-6 w-6 flex justify-center items-center bg-primary rounded-full">
+                        <i class="transform -rotate-45 fa-solid fa-arrow-right"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </header>
+
     <!-- Main -->
     <main></main>
+
     <!-- Footer -->
     <footer></footer>
+    
 </body>
 </html>
